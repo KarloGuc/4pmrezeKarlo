@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <style>
+
+        body{
+            background-image: url("space.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    
+
+
+<div id="continer">
+    <button id="btn">Pokreni vrijeme</button>
+    <div class="polje">
+
+    </div>
+</div>
+
+
+
+<script>
+
+
+    class Slika {
+        constructor(left_poz, top_poz){
+            var livo = left_poz;
+            var gori = top_poz;
+            var animacija;
+            var slika= document.createElement("img");
+            slika.src = "rocketa.png";
+            slika.style.left = livo + "px";
+            slika.style.top = gori + "px";
+            slika.style.width = "100px";
+            slika.style.height = "100px";
+            var pic = document.querySelector(".polje");
+            pic.append(slika);
+            slika.addEventListener("click", this.zaustaviRaketu);
+            this.pokreni(slika);
+        }
+        
+        pokreni(elem){
+            this.animacija=setInterval(
+                function(){
+                    elem.style.left = Math.floor(Math.random()*1000)+ "px";
+                    elem.style.top = Math.floor(Math.random()*800) + "px";
+                }
+            ,1000);
+        }
+
+        zaustaviRaketu(elem){
+            
+        }
+    }
+
+    const slika1 = new Slika();
+    const slika2 = new Slika();
+    const slika3 = new Slika();
+    const slika4 = new Slika();
+
+
+
+
+</script>
+
+</body>
+</html>
